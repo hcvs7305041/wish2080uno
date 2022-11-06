@@ -1,0 +1,44 @@
+int number[10][7] = {
+  {1, 1, 1, 1, 1, 1, 0},
+  {0, 1, 1, 0, 0 ,0 ,0},
+  {1, 1, 0, 1, 1, 0, 1},
+  {1, 1, 1, 1, 0, 0, 1},
+  {0, 1, 1, 0, 0, 1, 1},
+  {1, 0, 1, 1, 0, 1, 1},
+  {1, 0, 1, 1, 1, 1, 1},
+  {1, 1, 1, 0, 0, 0, 0},
+  {1, 1, 1, 1, 1, 1, 1},
+  {1, 1, 1, 0, 0, 1, 1}
+};
+
+void setup() {
+  for(int i = 3 ; i<=11 ; i++){
+    pinMode(i, OUTPUT);
+  }
+}
+
+void loop() {
+  for(int i = 3 ; i <= 9 ; i++)
+  {
+    digitalWrite(i, number[0][i-3]);
+  }
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  delay(10);
+  for(int i = 3 ; i <= 9 ; i++)
+  {
+    digitalWrite(i, number[6][i-3]);
+  }
+  digitalWrite(10, HIGH);
+  digitalWrite(11, LOW);
+  delay(10);
+
+/*  for(int i = 0 ; i <= 9 ; i++)
+  {
+    for(int j = 3 ; j <=9 ; j++)
+    {
+        digitalWrite(j,number[i][j-3]);
+    }
+  delay(500);
+  }*/
+}
